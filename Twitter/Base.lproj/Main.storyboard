@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,30 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kQ-V7-fBV">
-                                <rect key="frame" x="95" y="306.5" width="185" height="54"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="Wny-fx-5V0"/>
-                                    <constraint firstAttribute="height" constant="54" id="Z4k-RM-USn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLoginButton:" destination="kO3-kA-zJN" eventType="touchUpInside" id="6E6-Kz-dHM"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Kys-JV-cMx">
+                                <rect key="frame" x="87.5" y="195.5" width="200" height="276"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="LIH-gw-23R">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kQ-V7-fBV">
+                                        <rect key="frame" x="7.5" y="226" width="185" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JAk-Z2-DzK"/>
+                                            <constraint firstAttribute="width" constant="185" id="Q7x-Fu-Jk7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLoginButton:" destination="kO3-kA-zJN" eventType="touchUpInside" id="6E6-Kz-dHM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="7kQ-V7-fBV" firstAttribute="centerX" secondItem="VXG-QY-OvU" secondAttribute="centerX" id="Zio-96-QSS"/>
-                            <constraint firstItem="7kQ-V7-fBV" firstAttribute="centerY" secondItem="VXG-QY-OvU" secondAttribute="centerY" id="pit-nd-8ai"/>
+                            <constraint firstItem="Kys-JV-cMx" firstAttribute="centerY" secondItem="VXG-QY-OvU" secondAttribute="centerY" id="8L3-Cv-qp3"/>
+                            <constraint firstItem="Kys-JV-cMx" firstAttribute="centerX" secondItem="VXG-QY-OvU" secondAttribute="centerX" id="xFG-Ow-7Vx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Bm-UI-6KF"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="7kQ-V7-fBV" id="uYV-wX-nQL"/>
                         <segue destination="GjT-Lu-Rwy" kind="presentation" identifier="loginToHome" id="Zpv-4W-Sft"/>
                     </connections>
                 </viewController>
@@ -171,10 +180,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoy-Ch-ZJb">
+                                <rect key="frame" x="166.5" y="180" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zoy-Ch-ZJb" firstAttribute="centerX" secondItem="p7c-Nf-nf4" secondAttribute="centerX" id="8AS-9H-Y4j"/>
                             <constraint firstItem="THc-Bk-7Zv" firstAttribute="trailing" secondItem="bNE-Ny-6la" secondAttribute="trailing" id="9sr-sm-YY8"/>
+                            <constraint firstItem="zoy-Ch-ZJb" firstAttribute="top" secondItem="bNE-Ny-6la" secondAttribute="bottom" constant="8" id="CxG-18-PJ6"/>
                             <constraint firstItem="bNE-Ny-6la" firstAttribute="top" secondItem="THc-Bk-7Zv" secondAttribute="top" id="Yis-j6-Qil"/>
                             <constraint firstItem="bNE-Ny-6la" firstAttribute="leading" secondItem="THc-Bk-7Zv" secondAttribute="leading" id="qrw-1M-vds"/>
                         </constraints>
@@ -195,6 +212,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="countLabel" destination="zoy-Ch-ZJb" id="Zom-eN-aDb"/>
                         <outlet property="tweetTextView" destination="bNE-Ny-6la" id="6Yc-vS-ocp"/>
                     </connections>
                 </viewController>
@@ -243,6 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TwitterLogoBlue" width="200" height="200"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>

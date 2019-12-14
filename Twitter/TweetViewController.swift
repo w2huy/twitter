@@ -10,6 +10,7 @@ import UIKit
 
 class TweetViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var tweetTextView: UITextView!
     
     override func viewDidLoad() {
@@ -49,6 +50,8 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         // TODO: Update Character Count Label
 
         // The new text should be allowed? True/False
+        countLabel.text = "\(newText.count)/\(characterLimit)"
+        
         return newText.count < characterLimit
     }
     
